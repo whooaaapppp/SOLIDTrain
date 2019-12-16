@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
 
 public class Program
 {
@@ -6,11 +8,23 @@ public class Program
     public static void Main()
     {
         _computer = new Computer();
-        _computer.HardDrive();
-        _computer.Ram();
-        _computer.MotherBoarding();
-        _computer.PowerSupply();
-        _computer.Calculate();
+
+        runAllFunctions(_computer);
+        //_computer.HardDrive();
+        //_computer.Ram();
+        //_computer.MotherBoarding();
+        //_computer.PowerSupply();
+        //_computer.Calculate();
+    }
+
+    public static void runAllFunctions(Computer computer)
+    {
+        _computer = computer;
+        var methods = _computer.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        foreach (var method in methods)
+        {
+            method.Invoke(_computer, new object[] { });
+        }
     }
 }
 
@@ -53,6 +67,8 @@ public class Computer : IHardDrive, IPowerSupply, IRam, IMotherBoard, ICpu
     {
         //to do
     }
+
+    
 
     public void Calculate()
     {
