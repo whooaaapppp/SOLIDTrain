@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLIDTRAIn", "SOLIDTRAIn.csproj", "{EACA710F-AC77-4EA9-B14E-D47BDA17D1AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EACA710F-AC77-4EA9-B14E-D47BDA17D1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EACA710F-AC77-4EA9-B14E-D47BDA17D1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EACA710F-AC77-4EA9-B14E-D47BDA17D1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EACA710F-AC77-4EA9-B14E-D47BDA17D1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8148E41F-1D67-440B-802E-0ABCE5DBB5CE}
+	EndGlobalSection
+EndGlobal
