@@ -1,12 +1,77 @@
 ﻿using System;
 
-namespace SOLIDTRAIn
+public class Program
 {
-    class Program
+    private static Computer _computer;
+    public static void Main()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        _computer = new Computer();
+        _computer.Test();
+    }
+}
+
+public class Computer
+{
+    private MotherBoard _mb;
+    private Cpu _cpu;
+    private Ram _ram;
+    private HardDrive _hd;
+    private PowerSupply _ps;
+    public Computer()
+    {
+        _mb = new MotherBoard();
+        _cpu = new Cpu();
+        _ram = new Ram();
+        _hd = new HardDrive();
+        _ps = new PowerSupply();
+    }
+
+    public void Test()
+    {
+        Console.WriteLine(_mb.Motherboarding());
+        Console.WriteLine(_cpu.Calculate());
+        Console.WriteLine(_ram.StoringData());
+        Console.WriteLine(_hd.WritingData());
+        Console.WriteLine(_ps.ProducePower());
+    }
+}
+
+internal class PowerSupply
+{
+    public string ProducePower()
+    {
+        return "Producing Power";
+    }
+}
+
+internal class HardDrive
+{
+    public string WritingData()
+    {
+        return "Writing Data";
+    }
+}
+
+internal class Ram
+{
+    public string StoringData()
+    {
+        return "Storing Data";
+    }
+}
+
+internal class Cpu
+{
+    public string Calculate()
+    {
+        return "Calculating";
+    }
+}
+
+internal class MotherBoard
+{
+    public string Motherboarding()
+    {
+        return "Connecting everything";
     }
 }
