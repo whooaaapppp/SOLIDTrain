@@ -9,14 +9,16 @@ public class Program
     {
         _computer = new Computer();
 
-        runAllFunctions(_computer);
-        //_computer.HardDrive();
-        //_computer.Ram();
-        //_computer.MotherBoarding();
-        //_computer.PowerSupply();
-        //_computer.Calculate();
+        //invoking all functions via reflections
+        //runAllFunctions(_computer);
+        _computer.HardDrive();
+        _computer.Ram();
+        _computer.MotherBoarding();
+        _computer.PowerSupply();
+        _computer.Calculate();
     }
 
+    //reflections are slow... https://docs.microsoft.com/en-us/archive/msdn-magazine/2005/july/using-net-avoid-common-performance-pitfalls-for-speedier-apps
     public static void runAllFunctions(Computer computer)
     {
         // https://docs.microsoft.com/en-us/dotnet/api/system.reflection.methodbase.invoke?view=netcore-3.1 
