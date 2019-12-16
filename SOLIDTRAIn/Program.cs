@@ -10,6 +10,34 @@ public class Program
     }
 }
 
+
+public interface MotherBoard
+{
+    void MotherBoarding(string[] item);
+}
+
+public interface Cpu
+{
+    void Calculate(string[] item);
+}
+
+public interface Ram
+{
+    void Ram(string[] item);
+}
+
+public interface HardDrive
+{
+    void HardDrive(string[] item);
+}
+
+public interface PowerSupply
+{
+    void PowerSupply(string[] item);
+}
+
+
+
 public class Computer
 {
     private MotherBoard _mb;
