@@ -31,7 +31,6 @@ public class Program
     }
 }
 
-
 public interface IMotherBoard
 {
     void MotherBoarding();
