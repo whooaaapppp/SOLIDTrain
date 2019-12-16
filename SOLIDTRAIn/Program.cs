@@ -6,100 +6,84 @@ public class Program
     public static void Main()
     {
         _computer = new Computer();
-        _computer.Test();
+        _computer.HardDrive();
+        _computer.Ram();
+        _computer.MotherBoarding();
+        _computer.PowerSupply();
+        _computer.Calculate();
     }
 }
 
 
-public interface MotherBoard
+public interface IMotherBoard
 {
-    void MotherBoarding(string[] item);
+    void MotherBoarding();
 }
 
-public interface Cpu
+public interface ICpu
 {
-    void Calculate(string[] item);
+    void Calculate();
 }
 
-public interface Ram
+public interface IRam
 {
-    void Ram(string[] item);
+    void Ram();
 }
 
-public interface HardDrive
+public interface IHardDrive
 {
-    void HardDrive(string[] item);
+    void HardDrive();
 }
 
-public interface PowerSupply
+public interface IPowerSupply
 {
-    void PowerSupply(string[] item);
+    void PowerSupply();
 }
 
 
-
-public class Computer
+public interface IComputer : IHardDrive, IPowerSupply, IRam, IMotherBoard, ICpu
 {
-    private MotherBoard _mb;
-    private Cpu _cpu;
-    private Ram _ram;
-    private HardDrive _hd;
-    private PowerSupply _ps;
+    //premade interface wrapping other interfaces
+}
+
+public class Computer : IHardDrive, IPowerSupply, IRam, IMotherBoard, ICpu
+{
+    
     public Computer()
     {
-        _mb = new MotherBoard();
-        _cpu = new Cpu();
-        _ram = new Ram();
-        _hd = new HardDrive();
-        _ps = new PowerSupply();
+        //to do
     }
 
-    public void Test()
+    public void Calculate()
     {
-        Console.WriteLine(_mb.Motherboarding());
-        Console.WriteLine(_cpu.Calculate());
-        Console.WriteLine(_ram.StoringData());
-        Console.WriteLine(_hd.WritingData());
-        Console.WriteLine(_ps.ProducePower());
+        //execute the interface contract
+        Console.WriteLine("Calculating");
     }
+
+    public void HardDrive()
+    {
+        //execute the interface contract
+        Console.WriteLine("Writing Data");
+    }
+
+    public void MotherBoarding()
+    {
+        //execute the interface contract
+        Console.WriteLine("Connecting everything");
+    }
+
+    public void PowerSupply()
+    {
+        //execute the interface contract
+        Console.WriteLine("Producing Power");
+    }
+
+    public void Ram()
+    {
+        //execute the interface contract
+        Console.WriteLine("Storing Data");
+    }
+
+    
 }
 
-internal class PowerSupply
-{
-    public string ProducePower()
-    {
-        return "Producing Power";
-    }
-}
-
-internal class HardDrive
-{
-    public string WritingData()
-    {
-        return "Writing Data";
-    }
-}
-
-internal class Ram
-{
-    public string StoringData()
-    {
-        return "Storing Data";
-    }
-}
-
-internal class Cpu
-{
-    public string Calculate()
-    {
-        return "Calculating";
-    }
-}
-
-internal class MotherBoard
-{
-    public string Motherboarding()
-    {
-        return "Connecting everything";
-    }
-}
