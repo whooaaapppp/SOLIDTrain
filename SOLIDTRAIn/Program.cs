@@ -19,6 +19,7 @@ public class Program
 
     public static void runAllFunctions(Computer computer)
     {
+        // https://docs.microsoft.com/en-us/dotnet/api/system.reflection.methodbase.invoke?view=netcore-3.1 
         _computer = computer;
         var methods = _computer.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
         foreach (var method in methods)
@@ -67,8 +68,6 @@ public class Computer : IHardDrive, IPowerSupply, IRam, IMotherBoard, ICpu
     {
         //to do
     }
-
-    
 
     public void Calculate()
     {
